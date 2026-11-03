@@ -7,7 +7,7 @@ Cada envio para a main publica sozinho em cerca de 1 minuto.
 - Página única: abertura, pilares, sugestão da casa, cardápio com abas, delivery, história, depoimentos, Instagram, onde fica, rodapé, botão fixo do WhatsApp no celular.
 - Animações (aprovadas em 02/11/2026), em css/animacoes.css e js/animacoes.js:
   1. Abertura com a logo se desenhando no traço (uma vez por visita; ?abertura na URL força; toque pula).
-  2. Vapor subindo e sumindo nos ícones e espaços de foto.
+  2. Vapor aparecendo inteiro, subindo e sumindo (sem a piscada dos pedaços soltos, ajustado em 02/11).
   3. Blocos entrando ao rolar, em cascata.
   4. Traço cuscuz desenhado embaixo dos títulos.
   5. Preço contando até R$ 135.
