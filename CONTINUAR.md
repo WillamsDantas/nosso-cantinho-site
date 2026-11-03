@@ -8,7 +8,7 @@ Cada envio para a main publica sozinho em cerca de 1 minuto.
 - Animações (aprovadas em 02/11/2026), em css/animacoes.css e js/animacoes.js:
   1. Abertura com a logo se desenhando no traço, em toda abertura/atualização (toque pula). O site sempre recomeça do topo ao atualizar.
   2. Vapor aparecendo inteiro, subindo e sumindo (sem a piscada dos pedaços soltos, ajustado em 02/11).
-  3. Blocos entrando ao rolar, em cascata. No carrossel do celular os 3 cards aparecem juntos, deslizando de lado (não sobem ao arrastar).
+  3. Blocos entrando ao rolar, em cascata. No carrossel do celular os 3 cards aparecem juntos, só esmaecendo no lugar (sem deslize, para não serem cortados).
   4. Traço cuscuz desenhado embaixo dos títulos.
   5. Preço contando até R$ 135.
   6. Pratos do cardápio deslizando ao trocar de aba.
