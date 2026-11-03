@@ -2,6 +2,15 @@
    Respeita "reduzir movimento": se a pessoa pediu, nada se mexe. */
 (() => {
   const html = document.documentElement;
+
+  /* Ao abrir ou atualizar, o site sempre recomeça do topo */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  const topo = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  topo();
+  addEventListener("load", topo);
+  addEventListener("pageshow", e => { if (e.persisted) topo(); });
+
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   html.classList.add("anim");
 
@@ -93,14 +102,10 @@
     animar();
   }
 
-  /* Abertura: a logo se desenha e a cortina sobe. Só na primeira visita da sessão. */
+  /* Abertura: a logo se desenha e a cortina sobe. Toda vez que o site abre ou é atualizado. */
   function abertura(fim) {
     const D = window.LOGO_TRACO;
-    const forcar = new URLSearchParams(location.search).has("abertura");
-    let jaViu = false;
-    try { jaViu = sessionStorage.getItem("nc-abertura") === "1"; } catch (e) {}
-    if (!D || (jaViu && !forcar)) return fim();
-    try { sessionStorage.setItem("nc-abertura", "1"); } catch (e) {}
+    if (!D) return fim();
 
     const cx = getComputedStyle(html);
     const MAC = cx.getPropertyValue("--macaxeira").trim() || "#F6EAD3";
