@@ -34,6 +34,8 @@ html.anim .rv {
 }
 html.anim .rv--esq { translate: -32px 0; }
 html.anim .rv.visivel { opacity: 1; translate: 0 0; }
+/* no carrossel do celular os cards deslizam de lado (de baixo seriam cortados pela área de rolagem) */
+@media (max-width: 760px) { html.anim .pilares > .rv:not(.visivel) { translate: 32px 0; } }
 
 /* ---------- 4. Traço à mão embaixo dos títulos ---------- */
 .titulo, .hero__titulo { position: relative; width: fit-content; }

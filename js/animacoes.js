@@ -83,7 +83,16 @@
       e.target.classList.add("visivel");
       io.unobserve(e.target);
     }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    document.querySelectorAll(".rv").forEach(el => io.observe(el));
+    // cards dentro do carrossel (celular) aparecem juntos quando o carrossel entra na tela,
+    // e não um por um ao arrastar para o lado
+    const emCarrossel = el => el.closest(".pilares");
+    document.querySelectorAll(".rv").forEach(el => { if (!emCarrossel(el)) io.observe(el); });
+    const ioGrupo = new IntersectionObserver(entradas => entradas.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll(".rv").forEach(c => c.classList.add("visivel"));
+      ioGrupo.unobserve(e.target);
+    }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    document.querySelectorAll(".pilares").forEach(g => ioGrupo.observe(g));
 
     const ioPreco = new IntersectionObserver(entradas => entradas.forEach(e => {
       if (!e.isIntersecting) return;
