@@ -16,6 +16,8 @@ Cada envio para a main publica sozinho em cerca de 1 minuto.
   8. Cards sobem ao passar o mouse.
   Tudo desliga com "reduzir movimento".
 
+- Ajustes no celular (aprovados em 03/11/2026, testado em 360 px = Galaxy S24 e em 300 px simulando letra aumentada): menu fechado não aparece mais como faixa no topo; cardápio com nome e preço na mesma linha e descrição embaixo; horários com rótulo em cima; títulos e textos equilibrados (text-wrap); selos da abertura em lista; botão fixo do WhatsApp some quando outro botão de pedido ou o rodapé está na tela.
+
 ## Pendente
 - Dados reais no CONFIG de js/main.js: WhatsApp, Instagram, endereço, busca do mapa, iFood.
 - Fotos de estúdio em assets/img/fotos (nomes no README).

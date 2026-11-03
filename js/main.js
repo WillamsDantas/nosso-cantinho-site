@@ -145,7 +145,21 @@ function menuCelular() {
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", fechar));
 }
 
+/* Botão fixo do celular: some enquanto outro botão de pedido ou o rodapé está na tela */
+function botaoFixo() {
+  const fixo = document.querySelector(".whats-fixo");
+  if (!fixo || !("IntersectionObserver" in window)) return;
+  const alvos = [".hero .acoes", "#delivery .acoes", "#onde-fica .acoes", ".rodape"].map(s => document.querySelector(s)).filter(Boolean);
+  const vis = new Set();
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting ? vis.add(e.target) : vis.delete(e.target));
+    fixo.classList.toggle("some", vis.size > 0);
+  });
+  alvos.forEach(a => io.observe(a));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  botaoFixo();
   aplicarContatos();
   atualizarStatus();
   setInterval(atualizarStatus, 60000);
