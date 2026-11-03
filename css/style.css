@@ -1,0 +1,242 @@
+/* Nosso Cantinho Comedoria · estilos do site */
+
+@font-face { font-family: "Amatic SC"; font-weight: 700; font-display: swap; src: url("../assets/fonts/amatic-sc-700.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 400; font-display: swap; src: url("../assets/fonts/manrope-400.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 500; font-display: swap; src: url("../assets/fonts/manrope-500.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 600; font-display: swap; src: url("../assets/fonts/manrope-600.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 700; font-display: swap; src: url("../assets/fonts/manrope-700.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-weight: 800; font-display: swap; src: url("../assets/fonts/manrope-800.woff2") format("woff2"); }
+
+:root {
+  --colorau: #A3341F;
+  --cuscuz: #E8B93C;
+  --coentro: #3F6B35;
+  --macaxeira: #F6EAD3;
+  --macaxeira-2: #EFE0C4;
+  --carne: #4A2318;
+  --borda: #E6D6B8;
+  --raio: 28px;
+  --wrap: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { background: var(--macaxeira); color: var(--carne); font-family: "Manrope", system-ui, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { width: min(var(--wrap), 100% - 40px); margin-inline: auto; }
+.am { font-family: "Amatic SC", sans-serif; font-weight: 700; line-height: .92; }
+
+/* Botões */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 28px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; white-space: nowrap; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(74, 35, 24, .18); }
+.btn--col { background: var(--colorau); color: var(--macaxeira); }
+.btn--out { border: 2px solid var(--colorau); color: var(--colorau); }
+.btn--cus { background: var(--cuscuz); color: var(--carne); }
+.btn--outmac { border: 2px solid var(--macaxeira); color: var(--macaxeira); }
+.acoes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+/* Ícone de vapor (recolorível) */
+.vapor-ico { display: inline-block; width: 30px; height: 38px; background: currentColor; -webkit-mask: url("../assets/img/marca/vapor.svg") center / contain no-repeat; mask: url("../assets/img/marca/vapor.svg") center / contain no-repeat; flex: none; }
+.vapor-ico--grande { width: 70px; height: 88px; color: var(--macaxeira); opacity: .25; }
+
+/* Espaços de foto: a foto aparece quando o arquivo existe em assets/img/fotos */
+.foto { position: relative; background: var(--macaxeira-2); border-radius: var(--raio); overflow: hidden; background-size: cover; background-position: center; }
+.foto::before { content: ""; position: absolute; left: 50%; top: 46%; width: 54px; height: 68px; transform: translate(-50%, -50%); background: var(--colorau); opacity: .35; -webkit-mask: url("../assets/img/marca/vapor.svg") center / contain no-repeat; mask: url("../assets/img/marca/vapor.svg") center / contain no-repeat; }
+.foto::after { content: attr(data-label); position: absolute; left: 0; right: 0; top: calc(46% + 50px); text-align: center; font-size: 13px; font-weight: 600; color: var(--carne); opacity: .55; padding: 0 16px; }
+.foto.tem-foto::before, .foto.tem-foto::after { display: none; }
+
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 50; background: rgba(246, 234, 211, .94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--borda); }
+.topo__in { display: flex; align-items: center; gap: 40px; height: 96px; }
+.topo__logo img { width: 92px; }
+.menu { display: flex; gap: 36px; margin-inline: auto; font-weight: 600; font-size: 16px; }
+.menu a { text-decoration: none; }
+.menu a:hover { color: var(--colorau); }
+.menu-btn { display: none; }
+
+/* Abertura */
+.hero { display: grid; grid-template-columns: 1fr 520px; gap: 64px; align-items: center; padding: 64px 0 96px; }
+.status { display: inline-flex; align-items: center; gap: 10px; background: var(--coentro); color: var(--macaxeira); padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+.status.fechado { background: var(--carne); }
+.status__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cuscuz); }
+.hero__titulo { font-size: clamp(64px, 7.2vw, 104px); color: var(--colorau); margin-top: 26px; }
+.hero__sub { margin-top: 26px; max-width: 520px; }
+.selos { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 30px; list-style: none; font-size: 15px; font-weight: 600; opacity: .8; }
+.hero__foto { position: relative; }
+.foto--hero { aspect-ratio: 4 / 5; border-radius: 32px; }
+.cartao-combo { position: absolute; left: -48px; bottom: 44px; display: flex; align-items: center; gap: 16px; background: var(--carne); color: var(--macaxeira); border-radius: 22px; padding: 18px 24px; text-decoration: none; box-shadow: 0 14px 30px rgba(74, 35, 24, .28); }
+.cartao-combo .vapor-ico { color: var(--cuscuz); }
+.cartao-combo b { display: block; font-size: 30px; color: var(--cuscuz); }
+.cartao-combo small { display: block; font-size: 14px; font-weight: 600; }
+.cartao-combo strong { font-size: 52px; color: var(--cuscuz); margin-left: 6px; }
+
+/* Seções */
+.sec { padding: 104px 0 112px; }
+.sec--col { background: var(--colorau); }
+.sec--car { background: var(--carne); color: var(--macaxeira); }
+.sec--mac2 { background: var(--macaxeira-2); }
+.sec__topo { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.titulo { font-size: clamp(56px, 6.4vw, 92px); color: var(--colorau); }
+.titulo--mac { color: var(--macaxeira); }
+.titulo--ig { font-size: clamp(38px, 5vw, 76px); overflow-wrap: anywhere; }
+.rotulo { font-size: 38px; color: var(--cuscuz); }
+.rotulo--coe { color: var(--coentro); }
+
+/* Pilares */
+.pilares { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 52px; }
+.pilar { background: var(--macaxeira); border-radius: var(--raio); overflow: hidden; display: flex; flex-direction: column; }
+.foto--pilar { aspect-ratio: 3 / 2; border-radius: 0; }
+.pilar__txt { padding: 26px 30px 32px; }
+.pilar h3 { font-size: 50px; color: var(--colorau); }
+.pilar p { font-size: 16px; margin-top: 10px; }
+.pilar a { display: inline-block; margin-top: 16px; font-weight: 700; font-size: 15px; color: var(--colorau); text-decoration: none; }
+
+/* Combo */
+.combo { display: grid; grid-template-columns: 560px 1fr; gap: 80px; align-items: center; }
+.foto--combo { aspect-ratio: 6 / 5; background-color: #5A2D20; }
+.foto--combo::before { background: var(--cuscuz); }
+.foto--combo::after { color: var(--macaxeira); }
+.combo__txt .titulo { margin-top: 12px; font-size: clamp(52px, 5.4vw, 78px); }
+.preco { display: flex; align-items: baseline; gap: 18px; margin: 22px 0 10px; }
+.preco s { font-size: 38px; opacity: .55; }
+.preco span { font-size: 104px; color: var(--cuscuz); }
+.combo__txt p { max-width: 520px; }
+.combo__txt .btn { margin-top: 30px; }
+
+/* Cardápio */
+.abas { display: flex; gap: 10px; margin-top: 32px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+.abas::-webkit-scrollbar { display: none; }
+.aba { flex: none; border: 0; cursor: pointer; padding: 12px 22px; border-radius: 999px; font: 700 15px "Manrope", sans-serif; background: var(--macaxeira-2); color: var(--carne); }
+.aba[aria-selected="true"] { background: var(--colorau); color: var(--macaxeira); }
+.pratos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; margin-top: 32px; }
+.prato { display: flex; align-items: center; gap: 20px; background: #FBF4E6; border-radius: 22px; padding: 18px 24px; }
+.prato__foto { width: 76px; height: 76px; flex: none; border-radius: 18px; background: var(--colorau); color: var(--macaxeira); display: grid; place-items: center; background-size: cover; background-position: center; }
+.prato__foto.tem-foto .vapor-ico { display: none; }
+.prato__info { flex: 1; min-width: 0; }
+.prato__nome { font-size: 38px; }
+.prato__desc { font-size: 15px; opacity: .72; margin-top: 4px; line-height: 1.45; }
+.prato__preco { font-size: 42px; color: var(--colorau); white-space: nowrap; }
+.nota { font-size: 14px; opacity: .6; margin-top: 26px; }
+
+/* Delivery */
+.passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 52px; list-style: none; }
+.passos li { background: var(--macaxeira); border-radius: var(--raio); padding: 34px 32px; }
+.passos li > span { width: 62px; height: 62px; border-radius: 50%; background: var(--colorau); color: var(--macaxeira); font-size: 42px; display: grid; place-items: center; }
+.passos h3 { font-size: 48px; margin-top: 20px; }
+.passos p { font-size: 16px; margin-top: 8px; }
+
+/* História */
+.historia { display: grid; grid-template-columns: 600px 1fr; gap: 80px; align-items: center; }
+.historia__foto { width: 100%; aspect-ratio: 6 / 5; object-fit: cover; border-radius: 32px; }
+.historia .titulo { margin-top: 10px; font-size: clamp(52px, 5.8vw, 84px); }
+.historia p:not(.rotulo) { margin-top: 22px; max-width: 520px; }
+.o-simbolo { display: flex; align-items: center; gap: 14px; font-weight: 600; color: var(--colorau); }
+.o-simbolo img { width: 26px; }
+
+/* Depoimentos */
+.depos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 52px; }
+.depo { background: var(--macaxeira); border-radius: var(--raio); padding: 34px 32px; }
+.estrelas { color: var(--cuscuz); font-size: 22px; letter-spacing: 2px; }
+.depo blockquote { margin-top: 14px; }
+.depo figcaption { margin-top: 22px; font-size: 15px; }
+.depo figcaption b { display: block; }
+.depo figcaption span { font-size: 13px; opacity: .6; }
+
+/* Instagram */
+.ig { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 40px; }
+.ig img { aspect-ratio: 1; object-fit: cover; border-radius: 18px; width: 100%; }
+
+/* Onde fica */
+.onde { display: grid; grid-template-columns: 1fr 600px; gap: 72px; align-items: center; }
+.endereco { margin-top: 22px; font-weight: 600; }
+.horarios { display: grid; grid-template-columns: 120px 1fr; row-gap: 10px; margin-top: 24px; }
+.horarios dt { font-size: 34px; color: var(--cuscuz); }
+.horarios dd { padding-top: 6px; font-size: 17px; }
+.mapa { aspect-ratio: 3 / 2; border-radius: 32px; overflow: hidden; background: var(--macaxeira-2); }
+.mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Rodapé */
+.rodape { background: var(--colorau); color: var(--macaxeira); padding: 64px 0; }
+.rodape__in { display: flex; align-items: center; gap: 56px; }
+.rodape__in img { width: 130px; }
+.rodape__txt { flex: 1; }
+.rodape__txt .am { font-size: 44px; }
+.rodape__txt p:not(.am) { font-size: 15px; margin-top: 8px; opacity: .85; }
+.rodape__txt .copy { font-size: 13px; opacity: .6; }
+
+/* Botão fixo de WhatsApp (só no celular) */
+.whats-fixo { display: none; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .hero, .combo, .historia, .onde { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .cartao-combo { left: 16px; right: 16px; bottom: 16px; }
+  .ig { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  html { scroll-padding-top: 76px; }
+  .topo__in { height: 76px; gap: 16px; justify-content: space-between; }
+  .topo__logo img { width: 72px; }
+  .topo__cta { display: none; }
+  .menu-btn { display: flex; flex-direction: column; gap: 5px; background: none; border: 0; padding: 10px; cursor: pointer; }
+  .menu-btn span { width: 26px; height: 3px; border-radius: 2px; background: var(--carne); transition: transform .2s ease, opacity .2s ease; }
+  .menu-btn span:last-child { width: 18px; }
+  .menu { position: fixed; inset: 76px 0 auto 0; flex-direction: column; gap: 0; background: var(--macaxeira); border-bottom: 1px solid var(--borda); padding: 8px 20px 20px; transform: translateY(-120%); transition: transform .25s ease; z-index: -1; font-size: 20px; }
+  .menu a { padding: 14px 0; border-bottom: 1px solid var(--borda); }
+  .menu.aberto { transform: none; }
+  .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3) { width: 26px; transform: translateY(-8px) rotate(-45deg); }
+
+  .hero { display: flex; flex-direction: column-reverse; gap: 24px; padding: 20px 0 48px; }
+  .hero__foto { width: 100%; }
+  .foto--hero { aspect-ratio: 7 / 6; border-radius: 24px; }
+  .cartao-combo { display: none; }
+  .hero__titulo { font-size: 58px; margin-top: 16px; }
+  .acoes { flex-direction: column; }
+  .acoes .btn { width: 100%; }
+
+  .sec { padding: 56px 0; }
+  .titulo { font-size: 54px; }
+  .pilares, .passos, .depos { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+  .pilares { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -20px; padding-right: 20px; }
+  .pilar { flex: 0 0 82%; scroll-snap-align: start; }
+  .pilar h3 { font-size: 40px; }
+  .vapor-ico--grande { display: none; }
+  .titulo--ig { font-size: 34px; }
+  .combo__txt .titulo, .historia .titulo { font-size: 52px; }
+
+  .combo, .historia, .onde { grid-template-columns: 1fr; gap: 28px; }
+  .preco span { font-size: 80px; }
+
+  .pratos { grid-template-columns: 1fr; gap: 12px; margin-top: 22px; }
+  .prato { padding: 14px 16px; gap: 14px; }
+  .prato__foto { width: 56px; height: 56px; border-radius: 14px; }
+  .prato__foto .vapor-ico { width: 22px; height: 28px; }
+  .prato__nome { font-size: 30px; }
+  .prato__preco { font-size: 32px; }
+
+  .passos li { display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; padding: 20px; }
+  .passos li > span { width: 48px; height: 48px; font-size: 34px; grid-row: span 2; }
+  .passos h3 { font-size: 36px; margin-top: 0; }
+
+  .ig { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .ig img { border-radius: 12px; }
+
+  .rodape { padding: 44px 0 120px; }
+  .rodape__in { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .rodape__in .btn { display: none; }
+  .rodape__txt .am { font-size: 34px; }
+
+  .whats-fixo { display: inline-flex; align-items: center; gap: 10px; position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 60; background: var(--colorau); color: var(--macaxeira); border: 2px solid var(--macaxeira); padding: 15px 26px; border-radius: 999px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 24px rgba(74, 35, 24, .32); white-space: nowrap; }
+  .whats-fixo .vapor-ico { width: 16px; height: 20px; color: var(--cuscuz); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .menu { transition: none; }
+}

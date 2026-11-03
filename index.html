@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosso Cantinho Comedoria · Comida de casa, tempero do Nordeste</title>
+  <meta name="description" content="Comida caseira com tempero nordestino, frutos do mar e caipirosca gelada em Maceió. Almoço todo dia, peça pelo WhatsApp.">
+  <meta name="theme-color" content="#A3341F">
+  <meta property="og:title" content="Nosso Cantinho Comedoria">
+  <meta property="og:description" content="Comida de casa, tempero do Nordeste. Moqueca, carne de sol e caipirosca. Peça pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/amatic-sc-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header class="topo" id="topo">
+    <div class="wrap topo__in">
+      <a href="#inicio" class="topo__logo" aria-label="Nosso Cantinho Comedoria, início">
+        <img src="assets/img/marca/logo-colorau.svg" alt="Nosso Cantinho Comedoria" width="96" height="87">
+      </a>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#historia">Nossa história</a>
+        <a href="#onde-fica">Onde fica</a>
+      </nav>
+      <a class="btn btn--col topo__cta js-whats" data-msg="Oi! Vim pelo site e quero fazer um pedido." href="#">Pedir no WhatsApp</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABERTURA -->
+    <section class="hero wrap" id="inicio">
+      <div class="hero__txt">
+        <p class="status" id="status"><span class="status__dot"></span><span id="statusTxt">Almoço todo dia, das 11h às 16h</span></p>
+        <h1 class="am hero__titulo">Comida de casa,<br>tempero do Nordeste</h1>
+        <p class="hero__sub">Moqueca na panela de barro, carne de sol na nata e caipirosca gelada. Tudo feito na hora, com aquele gosto de almoço de domingo na casa da família.</p>
+        <div class="acoes">
+          <a class="btn btn--col js-whats" data-msg="Oi! Vim pelo site e quero fazer um pedido." href="#">Pedir no WhatsApp</a>
+          <a class="btn btn--out" href="#cardapio">Ver cardápio</a>
+        </div>
+        <ul class="selos">
+          <li>Prato feito a partir de R$ 25</li>
+          <li>Entrega na região</li>
+          <li>Pix, cartão ou dinheiro</li>
+        </ul>
+      </div>
+      <div class="hero__foto">
+        <div class="foto foto--hero" data-foto="hero-moqueca.jpg" data-label="Foto: moqueca na panela de barro (4:5)"></div>
+        <a class="cartao-combo js-whats" data-msg="Oi! Quero o combo moqueca de camarão pra dois + 2 caipiroscas." href="#">
+          <span class="vapor-ico" aria-hidden="true"></span>
+          <span><b class="am">Sugestão da casa</b><small>Moqueca pra dois + 2 caipiroscas</small></span>
+          <strong class="am">R$ 135</strong>
+        </a>
+      </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="sec sec--col" id="pilares">
+      <div class="wrap">
+        <div class="sec__topo">
+          <h2 class="am titulo titulo--mac">O que sai da nossa cozinha</h2>
+          <span class="vapor-ico vapor-ico--grande" aria-hidden="true"></span>
+        </div>
+        <div class="pilares">
+          <article class="pilar">
+            <div class="foto foto--pilar" data-foto="pilar-caseira.jpg" data-label="Foto: prato feito caseiro (3:2)"></div>
+            <div class="pilar__txt">
+              <h3 class="am">Comida caseira</h3>
+              <p>Galinha caipira, carne de sol na nata, escondidinho. O prato feito que você come e lembra de casa.</p>
+              <a href="#cardapio" data-aba="caseiros">Ver pratos →</a>
+            </div>
+          </article>
+          <article class="pilar">
+            <div class="foto foto--pilar" data-foto="pilar-frutos-do-mar.jpg" data-label="Foto: camarão e sururu (3:2)"></div>
+            <div class="pilar__txt">
+              <h3 class="am">Frutos do mar</h3>
+              <p>Moqueca, sururu ao coco e camarão. Peixe e camarão chegam frescos, direto pra panela de barro.</p>
+              <a href="#cardapio" data-aba="mar">Ver pratos →</a>
+            </div>
+          </article>
+          <article class="pilar">
+            <div class="foto foto--pilar" data-foto="pilar-caipirosca.jpg" data-label="Foto: caipiroscas (3:2)"></div>
+            <div class="pilar__txt">
+              <h3 class="am">Caipirosca</h3>
+              <p>De caju, mangaba, maracujá ou limão. Fruta de verdade, gelo até a boca do copo.</p>
+              <a href="#cardapio" data-aba="caipiroscas">Ver caipiroscas →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUGESTÃO DA CASA -->
+    <section class="sec sec--car" id="combo">
+      <div class="wrap combo">
+        <div class="foto foto--combo" data-foto="combo-da-casa.jpg" data-label="Foto: combo moqueca + caipiroscas (6:5)"></div>
+        <div class="combo__txt">
+          <p class="am rotulo">Sugestão da casa</p>
+          <h2 class="am titulo titulo--mac">Moqueca de camarão<br>pra dois + 2 caipiroscas</h2>
+          <p class="preco"><s class="am">R$ 149</s> <span class="am">R$ 135</span></p>
+          <p>Serve bem duas pessoas, com pirão e arroz soltinho. Sai mais em conta que pedir separado e chega à mesa ainda borbulhando na panela de barro.</p>
+          <a class="btn btn--cus js-whats" data-msg="Oi! Quero o combo moqueca de camarão pra dois + 2 caipiroscas." href="#">Quero esse combo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section class="sec" id="cardapio">
+      <div class="wrap">
+        <div class="sec__topo">
+          <h2 class="am titulo">Cardápio</h2>
+          <a class="btn btn--out" href="cardapio.pdf" target="_blank" rel="noopener">Baixar cardápio completo</a>
+        </div>
+        <div class="abas" role="tablist" id="abas"></div>
+        <div class="pratos" id="pratos" role="tabpanel"></div>
+        <p class="nota">Valores ilustrativos. Taxa de serviço opcional de 10% no salão.</p>
+      </div>
+    </section>
+
+    <!-- DELIVERY -->
+    <section class="sec sec--mac2" id="delivery">
+      <div class="wrap">
+        <h2 class="am titulo">Tá com fome em casa? A gente leva.</h2>
+        <ol class="passos">
+          <li><span class="am">1</span><h3 class="am">Chama no WhatsApp</h3><p>Sem app e sem cadastro. Manda o pedido ou pede o cardápio do dia.</p></li>
+          <li><span class="am">2</span><h3 class="am">Paga do seu jeito</h3><p>Pix, cartão na entrega ou dinheiro. Você recebe o valor certinho antes.</p></li>
+          <li><span class="am">3</span><h3 class="am">Chega quentinho</h3><p>Embalagem que segura o calor e o caldo da moqueca até a sua mesa.</p></li>
+        </ol>
+        <div class="acoes">
+          <a class="btn btn--col js-whats" data-msg="Oi! Quero pedir delivery." href="#">Pedir no WhatsApp</a>
+          <a class="btn btn--out js-ifood" href="#" target="_blank" rel="noopener">Pedir pelo iFood</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA HISTÓRIA -->
+    <section class="sec" id="historia">
+      <div class="wrap historia">
+        <img class="historia__foto" src="assets/img/mockups/quiosque.jpg" alt="Quiosque da Nosso Cantinho numa feira gastronômica" width="1200" height="900" loading="lazy">
+        <div>
+          <p class="am rotulo rotulo--coe">Nossa história</p>
+          <h2 class="am titulo">Um cantinho pra<br>comer como em casa</h2>
+          <p>A Nosso Cantinho começou com uma panela de barro e a receita de moqueca da família. Hoje a cozinha cresceu, mas o jeito de fazer continua o mesmo: tempero feito na hora, peixe fresco e gente que recebe você pelo nome.</p>
+          <p class="o-simbolo"><img src="assets/img/marca/simbolo-colorau.svg" alt="" width="28" height="56"> O nosso símbolo é o "Ô!" de quem prova a primeira garfada.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="sec sec--col" id="depoimentos">
+      <div class="wrap">
+        <h2 class="am titulo titulo--mac">Quem come, volta</h2>
+        <div class="depos">
+          <!-- Troque pelos depoimentos reais (Google ou Instagram), com autorização do cliente -->
+          <figure class="depo"><p class="estrelas">★★★★★</p><blockquote>Espaço para um depoimento real de cliente, tirado do Google ou do Instagram.</blockquote><figcaption><b>Nome do cliente</b><span>Avaliação no Google</span></figcaption></figure>
+          <figure class="depo"><p class="estrelas">★★★★★</p><blockquote>Espaço para um depoimento real de cliente, tirado do Google ou do Instagram.</blockquote><figcaption><b>Nome do cliente</b><span>Avaliação no Google</span></figcaption></figure>
+          <figure class="depo"><p class="estrelas">★★★★★</p><blockquote>Espaço para um depoimento real de cliente, tirado do Google ou do Instagram.</blockquote><figcaption><b>Nome do cliente</b><span>Avaliação no Google</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="sec" id="instagram">
+      <div class="wrap">
+        <div class="sec__topo">
+          <div>
+            <p class="am rotulo rotulo--coe">No Instagram</p>
+            <h2 class="am titulo titulo--ig js-ig-handle">@nossocantinho.comedoria</h2>
+          </div>
+          <a class="btn btn--out js-ig" href="#" target="_blank" rel="noopener">Seguir no Instagram</a>
+        </div>
+        <div class="ig">
+          <img src="assets/img/mockups/bone.jpg" alt="Boné da Nosso Cantinho" loading="lazy" width="640" height="640">
+          <img src="assets/img/mockups/sacola.jpg" alt="Sacola da Nosso Cantinho" loading="lazy" width="640" height="640">
+          <img src="assets/img/mockups/polo.jpg" alt="Camisa polo da equipe" loading="lazy" width="640" height="640">
+          <img src="assets/img/mockups/van.jpg" alt="Van de delivery" loading="lazy" width="640" height="640">
+          <img src="assets/img/mockups/cartao.jpg" alt="Cartão de visita" loading="lazy" width="640" height="640">
+          <img src="assets/img/mockups/avental.jpg" alt="Avental da cozinha" loading="lazy" width="640" height="640">
+        </div>
+      </div>
+    </section>
+
+    <!-- ONDE FICA -->
+    <section class="sec sec--car" id="onde-fica">
+      <div class="wrap onde">
+        <div>
+          <h2 class="am titulo titulo--mac">Vem pro<br>nosso cantinho</h2>
+          <p class="endereco js-endereco">Rua do Exemplo, 123 · Bairro · Maceió, AL</p>
+          <dl class="horarios">
+            <dt class="am">Almoço</dt><dd>Todos os dias, das 11h às 16h</dd>
+            <dt class="am">Jantar</dt><dd>Quinta a sábado, das 18h às 23h</dd>
+          </dl>
+          <div class="acoes">
+            <a class="btn btn--cus js-mapa" href="#" target="_blank" rel="noopener">Como chegar</a>
+            <a class="btn btn--outmac js-tel" href="#">Ligar agora</a>
+          </div>
+        </div>
+        <div class="mapa">
+          <iframe class="js-mapa-embed" title="Mapa da Nosso Cantinho" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="wrap rodape__in">
+      <img src="assets/img/marca/logo-macaxeira.svg" alt="Nosso Cantinho Comedoria" width="130" height="118" loading="lazy">
+      <div class="rodape__txt">
+        <p class="am">Comida de casa, tempero do Nordeste</p>
+        <p class="js-contato">WhatsApp (82) 9 0000-0000 · @nossocantinho.comedoria</p>
+        <p class="copy">© <span id="ano">2026</span> Nosso Cantinho Comedoria</p>
+      </div>
+      <a class="btn btn--cus js-whats" data-msg="Oi! Vim pelo site e quero fazer um pedido." href="#">Pedir no WhatsApp</a>
+    </div>
+  </footer>
+
+  <!-- Botão fixo (celular) -->
+  <a class="whats-fixo js-whats" data-msg="Oi! Vim pelo site e quero fazer um pedido." href="#" aria-label="Pedir no WhatsApp"><span class="vapor-ico" aria-hidden="true"></span>Pedir no WhatsApp</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
