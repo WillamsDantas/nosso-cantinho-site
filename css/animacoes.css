@@ -55,14 +55,15 @@ html.anim .whats-fixo, html.anim .topo__cta { animation: chama 6s ease-in-out 4s
 
 /* ---------- 8. Toque e passar o mouse ---------- */
 .pilar, .passos li, .depo, .prato, .cartao-combo { transition: transform .2s ease, box-shadow .2s ease; }
-@media (hover: hover) {
+/* só em computador com mouse: no celular o toque não levanta nem encolhe os cards */
+@media (hover: hover) and (pointer: fine) {
   .pilar:hover, .passos li:hover, .depo:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgb(74 35 24 / .16); }
   .prato:hover { transform: translateX(4px); }
   .cartao-combo:hover { transform: translateY(-4px); }
   .ig img { transition: scale .3s ease; }
   .ig img:hover { scale: 1.04; }
 }
-.btn:active, .pilar:active, .prato:active { scale: .98; }
+.btn:active { scale: .98; }
 
 @media (prefers-reduced-motion: reduce) {
   .pilar, .passos li, .depo, .prato, .cartao-combo, .aba, .ig img { transition: none; }

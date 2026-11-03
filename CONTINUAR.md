@@ -13,7 +13,7 @@ Cada envio para a main publica sozinho em cerca de 1 minuto.
   5. Preço contando até R$ 135.
   6. Pratos do cardápio deslizando ao trocar de aba.
   7. Botão do WhatsApp com duas batidinhas a cada 6 s.
-  8. Cards sobem ao passar o mouse.
+  8. Cards sobem ao passar o mouse (só em computador com mouse; no celular o toque não mexe no card).
   Tudo desliga com "reduzir movimento".
 
 - Ajustes no celular (aprovados em 03/11/2026, testado em 360 px = Galaxy S24 e em 300 px simulando letra aumentada): menu fechado não aparece mais como faixa no topo; cardápio com nome e preço na mesma linha e descrição embaixo; horários com rótulo em cima; títulos e textos equilibrados (text-wrap); selos da abertura em lista; botão fixo do WhatsApp some quando outro botão de pedido ou o rodapé está na tela.
