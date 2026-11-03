@@ -1,0 +1,69 @@
+/* Nosso Cantinho Comedoria · animações
+   Tudo fica dentro de html.anim, que só é ligado quando a pessoa
+   não pediu "reduzir movimento" no celular ou no computador. */
+
+/* ---------- 1. Abertura: logo se desenha no traço ---------- */
+.abertura { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--colorau); cursor: pointer; }
+.abertura svg { width: min(62vw, 340px); height: auto; overflow: visible; }
+.abertura.sai { translate: 0 -100%; transition: translate .65s cubic-bezier(.76, 0, .24, 1); }
+html.travado, html.travado body { overflow: hidden; }
+
+/* ---------- 2. Vapor subindo ---------- */
+@keyframes vapor-sobe {
+  0%   { clip-path: inset(100% 0 0 0); translate: 0 4px; opacity: 1; }
+  45%  { clip-path: inset(0 0 0 0);    translate: 0 0;   opacity: 1; }
+  72%  { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0);    translate: 0 -8px; opacity: 0; }
+}
+html.anim .vapor-ico { animation: vapor-sobe 3.6s cubic-bezier(.4, 0, .2, 1) infinite; }
+html.anim .foto::before { animation: vapor-sobe 3.6s cubic-bezier(.4, 0, .2, 1) infinite; }
+html.anim .pilar:nth-child(2) .foto::before, html.anim .pilar:nth-child(2) .vapor-ico { animation-delay: .5s; }
+html.anim .pilar:nth-child(3) .foto::before, html.anim .pilar:nth-child(3) .vapor-ico { animation-delay: 1s; }
+html.anim .prato:nth-child(even) .vapor-ico { animation-delay: .9s; }
+html.anim .prato:nth-child(3n) .vapor-ico { animation-delay: 1.7s; }
+/* a transparência passa para a cor, para o "sumir" do vapor funcionar */
+html.anim .vapor-ico--grande { opacity: 1; color: rgb(246 234 211 / .25); }
+html.anim .foto::before { opacity: 1; background: rgb(163 52 31 / .35); }
+html.anim .foto--combo::before { background: rgb(232 185 60 / .4); }
+
+/* ---------- 3. Seções entrando ao rolar ---------- */
+html.anim .rv {
+  opacity: 0; translate: 0 28px;
+  transition: opacity .7s ease var(--d, 0s), translate .8s cubic-bezier(.22, 1, .36, 1) var(--d, 0s),
+              transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+html.anim .rv--esq { translate: -32px 0; }
+html.anim .rv.visivel { opacity: 1; translate: 0 0; }
+
+/* ---------- 4. Traço à mão embaixo dos títulos ---------- */
+.titulo, .hero__titulo { position: relative; width: fit-content; }
+.risco { position: absolute; left: -.04em; bottom: -.14em; width: min(72%, 4.2em); height: .16em; overflow: visible; pointer-events: none; }
+.risco path { fill: none; stroke: var(--cuscuz); stroke-width: 5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+html.anim .risco path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s cubic-bezier(.65, 0, .35, 1) calc(var(--d, 0s) + .35s); }
+html.anim .visivel .risco path, html.anim .visivel.risco-pai .risco path { stroke-dashoffset: 0; }
+.titulo--mac .risco path, .sec--car .risco path { stroke: var(--cuscuz); }
+
+/* ---------- 6. Cardápio: pratos deslizam ao trocar de aba ---------- */
+@keyframes prato-entra { from { opacity: 0; translate: 18px 0; } to { opacity: 1; translate: 0 0; } }
+html.anim .prato.entra { animation: prato-entra .45s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--i, 0) * 55ms); }
+.aba { transition: background-color .2s ease, color .2s ease, scale .15s ease; }
+.aba:active { scale: .96; }
+
+/* ---------- 7. Botão do WhatsApp chamando atenção ---------- */
+@keyframes chama { 0%, 84%, 100% { scale: 1; } 88% { scale: 1.07; } 92% { scale: 1; } 96% { scale: 1.035; } }
+html.anim .whats-fixo, html.anim .topo__cta { animation: chama 6s ease-in-out 4s infinite; }
+
+/* ---------- 8. Toque e passar o mouse ---------- */
+.pilar, .passos li, .depo, .prato, .cartao-combo { transition: transform .2s ease, box-shadow .2s ease; }
+@media (hover: hover) {
+  .pilar:hover, .passos li:hover, .depo:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgb(74 35 24 / .16); }
+  .prato:hover { transform: translateX(4px); }
+  .cartao-combo:hover { transform: translateY(-4px); }
+  .ig img { transition: scale .3s ease; }
+  .ig img:hover { scale: 1.04; }
+}
+.btn:active, .pilar:active, .prato:active { scale: .98; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pilar, .passos li, .depo, .prato, .cartao-combo, .aba, .ig img { transition: none; }
+}
